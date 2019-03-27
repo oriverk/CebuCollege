@@ -1,13 +1,13 @@
 <div class="page-header">
 <p id="notice"><%= notice %></p>
 
-<h1>生徒データ</h1>
+<h1>生徒データ一覧</h1>
 
 <table>
   <thead>
     <tr>
       <th>氏名</th>
-      <th>Eメール</th>
+      <th>メールアドレス</th>
       <th>性別</th>
       <th>年齢</th>
       <th>その他</th>
@@ -20,7 +20,7 @@
       <tr>
         <td><%= student.try(:name) %></td>
         <td><%= student.email %></td>
-        <td><%= display_name student.gender %></td>
+        <td><%= student.try(:gender) %></td>
         <td><%= student.try(:age) %></td>
         <td><%= student.try(:opinion) %></td>
         <td><%= link_to '表示', student %></td>
@@ -35,6 +35,6 @@
 
 <br>
 
-<%= link_to '生徒を追加', new_student_path %>
+<%= link_to '新規追加', new_student_path %>
 <%= paginate @students %>
 </div>

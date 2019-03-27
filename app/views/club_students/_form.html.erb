@@ -12,20 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :student_id %>
+    <%= form.label :student_id ,'生徒'%>
     <%= form.select :student_id, options_for_select(@students, @selected_student) %>
   </div>
 
   <div class="field">
-    <%= form.label :club_id %>
+    <%= form.label :club_id ,'部活'%>
     <%= form.select :club_id, @clubs %>
   </div>
-
+<!--
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
-
+-->
   <div class="actions">
     <%= form.submit "更新"%>
   </div>

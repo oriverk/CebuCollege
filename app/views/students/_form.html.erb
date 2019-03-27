@@ -12,30 +12,30 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name ,'氏名'%>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
+    <%= form.label :email ,'メールアドレス'%>
     <%= form.text_field :email %>
   </div>
 
   <div class="field">
-    <%= form.label :gender %>
+    <%= form.label :gender ,'性別'%>
     <%= form.radio_button :gender, 'male' %>男性
     <%= form.radio_button :gender, 'female' %>女性
   </div>
 
   <div class="field">
-    <%= form.label :age %>
+    <%= form.label :age ,'年齢'%>
     <%= form.radio_button :age, 'teen' %>10代
     <%= form.radio_button :age, 'twenties' %>20代
     <%= form.radio_button :age, 'thirties' %>30代
   </div>
 
   <div class="field">
-    <%= form.label :opinion %>
+    <%= form.label :opinion ,'その他'%>
     <%= form.text_area :opinion %>
   </div>
 
