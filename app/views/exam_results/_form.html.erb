@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :student_id %>
+    <%= form.label :student_id ,"氏名"%>
    <%= form.select :student_id, options_for_select(@students, @selected_student) %>
   </div>
 
   <div class="field">
-    <%= form.label :subject_id %>
+    <%= form.label :subject_id ,"教科"%>
     <%= form.select :subject_id, @subjects %>
   </div>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name ,"試験名"%>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :score %>
+    <%= form.label :score ,"点数"%>
     <%= form.number_field :score %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "更新"%>
   </div>
 <% end %>
