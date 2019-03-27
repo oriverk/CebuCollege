@@ -7,6 +7,7 @@ class StudentsController < ApplicationController
   def index
     # @students = Student.all
     @students = Student.page(params[:page])
+                        .order(id: :asc)
   end
 
   # GET /students/1
