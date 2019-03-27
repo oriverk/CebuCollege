@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>氏名:</strong>
+  <%= @subject.name %>
+</p>
+
+<p>
+  <strong>Max score:</strong>
+  <%= @subject.max_score %>
+</p>
+
+<%= link_to '編集', edit_subject_path(@subject) %> |
+<%= link_to '戻る', subjects_path %>

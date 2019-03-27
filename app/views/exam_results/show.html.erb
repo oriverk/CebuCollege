@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>氏名:</strong>
+  <%= @exam_result.student.name %>
+</p>
+
+<p>
+  <strong>教科:</strong>
+  <%= @exam_result.subject.name %>
+</p>
+
+<p>
+  <strong>試験名:</strong>
+  <%= @exam_result.name %>
+</p>
+
+<p>
+  <strong>点数:</strong>
+  <%= @exam_result.score %>
+</p>
+
+<%= link_to '編集', edit_exam_result_path(@exam_result) %> |
+<%= link_to '戻る', exam_results_path %>

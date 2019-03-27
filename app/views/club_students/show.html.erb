@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>生徒:</strong>
+  <%= @club_student.student %>
+</p>
+
+<p>
+  <strong>部活:</strong>
+  <%= @club_student.club %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @club_student.name %>
+</p>
+
+<%= link_to '編集', edit_club_student_path(@club_student) %> |
+<%= link_to '戻る', club_students_path %>

@@ -1,0 +1,45 @@
+<%= form_with(model: student, local: true) do |form| %>
+  <% if student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.radio_button :gender, 'male' %>男性
+    <%= form.radio_button :gender, 'female' %>女性
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.radio_button :age, 'teen' %>10代
+    <%= form.radio_button :age, 'twenties' %>20代
+    <%= form.radio_button :age, 'thirties' %>30代
+  </div>
+
+  <div class="field">
+    <%= form.label :opinion %>
+    <%= form.text_area :opinion %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

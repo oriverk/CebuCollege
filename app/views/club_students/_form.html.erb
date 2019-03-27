@@ -1,0 +1,32 @@
+<%= form_with(model: club_student, local: true) do |form| %>
+  <% if club_student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(club_student.errors.count, "error") %> prohibited this club_student from being saved:</h2>
+
+      <ul>
+      <% club_student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :student_id %>
+    <%= form.select :student_id, options_for_select(@students, @selected_student) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :club_id %>
+    <%= form.select :club_id, @clubs %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @student.gender %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @student.age %>
+</p>
+
+<p>
+  <strong>Opinion:</strong>
+  <%= @student.opinion %>
+</p>
+
+<p>
+  <strong>ExamResults:</strong>
+</P>
+
+<table border="1">
+  <tr>
+    <th>科目名</th>
+    <th>点数</th>
+    <th>平均</th>
+    <th>最高</th>
+    <th>最小</th>
+  </tr>
+  <% @students.each do |student| %>
+    <tr>
+      <td><%= student.subject_name %></td>
+      <td><%= student.score %></td>
+      <td><%= @score_hash[student.subject_id][:avg_score] %></td>
+      <td><%= @score_hash[student.subject_id][:max_score] %></td>
+      <td><%= @score_hash[student.subject_id][:min_score] %></td>
+    </tr>              
+  <% end %>
+</table>
+
+
+
+<%= link_to 'Edit', edit_student_path(@student) %>
+<%= link_to 'Back', students_path %>
