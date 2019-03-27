@@ -15,8 +15,8 @@
   <tbody>
     <% @club_students.each do |club_student| %>
       <tr>
-        <td><%= club_student.student %></td>
-        <td><%= club_student.club %></td>
+        <td><%= club_student.student.name %></td>
+        <td><%= club_student.club.name %></td>
         
         <td><%= link_to '表示', club_student %></td>
         <td><%= link_to '編集', edit_club_student_path(club_student) %></td>
