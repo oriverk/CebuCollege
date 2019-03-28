@@ -16,18 +16,33 @@
   </thead>
 
   <tbody>
-    <% @students.each do |student| %>
+    <% if current_student.admin? %>
+      <% @students.each do |student| %>
+        <tr>
+          <td><%= student.name %></td>
+          <td><%= student.email %></td>
+          <td><%= display_name student.gender %></td>
+          <td><%= display_age student.age %></td>
+          <td><%= student.opinion %></td>
+          <td><%= link_to 'Show', student %></td>
+          <td><%= link_to 'Edit', edit_student_path(student) %></td>
+          <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'New Exam Result', new_exam_result_path(student_id: student.id) %></td>
+          <td><%= link_to 'New Club Student', new_club_student_path(student_id: student.id) %></td>
+        </tr>
+      <% end %>
+    <% else %>
       <tr>
-        <td><%= student.try(:name) %></td>
-        <td><%= student.email %></td>
-        <td><%= student.try(:gender) %></td>
-        <td><%= student.try(:age) %></td>
-        <td><%= student.try(:opinion) %></td>
-        <td><%= link_to '表示', student, class:"btn btn-outline-primary"%></td>
-        <td><%= link_to '編集', edit_student_path(student), class:"btn btn-outline-info" %></td>
-        <td><%= link_to '削除', student, method: :delete, data: { confirm: 'よろしいですか？' }, class:"btn btn-outline-danger"%></td>
-        <td><%= link_to '(試験)作成', new_exam_result_path(student_id: student.id) , class:"btn btn-outline-warning"%></td>
-        <td><%= link_to '(部活)作成', new_club_student_path(student_id: student.id) , class:"btn btn-outline-warning"%></td>
+        <td><%= @student.name %></td>
+        <td><%= @student.email %></td>
+        <td><%= display_name @student.gender %></td>
+        <td><%= display_age @student.age %></td>
+        <td><%= @student.opinion %></td>
+        <td><%= link_to 'Show', @student %></td>
+        <td><%= link_to 'Edit', edit_student_path(@student) %></td>
+        <td><%= link_to 'Destroy', @student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'New Exam Result', new_exam_result_path(student_id: @student.id) %></td>
+        <td><%= link_to 'New Club student', new_club_student_path(student_id: @student.id) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -35,6 +50,6 @@
 
 <br>
 
-<%= link_to '生徒追加', new_student_path %>
-<%= paginate @students %>
-</div>
+<% if current_student.admin? %>
+  <%= paginate @students %>
+<% end %>

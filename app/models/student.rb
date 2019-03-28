@@ -1,5 +1,5 @@
 class Student < ApplicationRecord
-  paginates_per 30
+  paginates_per 50
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

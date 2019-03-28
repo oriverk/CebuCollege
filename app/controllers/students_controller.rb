@@ -6,8 +6,11 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     # @students = Student.all
-    @students = Student.page(params[:page])
-                        .order(id: :asc)
+    if current_student.admin?
+        @students = Student.page params[:page]
+    else
+        @student = current_student
+    end
   end
 
   # GET /students/1
@@ -98,6 +101,7 @@ class StudentsController < ApplicationController
   end
 
   private
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_student
       @student = Student.find(params[:id])
