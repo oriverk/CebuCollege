@@ -3,6 +3,6 @@
     <%= link_to '教科一覧', subjects_path %> 
     <%= link_to '部活一覧', clubs_path %> 
     <%= link_to '試験結果一覧', exam_results_path %>
-    <%= link_to '部活加入状況', club_students_path %>
-    <%= link_to 'ログアウト', destroy_student_session_path, method: :delete %>
+    <%= link_to '部活所属状況', club_students_path %>
+    <%= link_to 'ログアウト', destroy_student_session_path, method: :delete ,class:"float-right"%>
 <% end %>
