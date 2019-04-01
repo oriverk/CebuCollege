@@ -5,7 +5,7 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @students = Student.all.page params[:page]
     #if current_student.admin?
       #  @students = Student.page params[:page]
     #else
