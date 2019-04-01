@@ -8,6 +8,7 @@ class ExamResultsController < ApplicationController
   def index
     #@exam_results = ExamResult.all
     @exam_results = ExamResult.page(params[:page])
+                              
   end
 
   # GET /exam_results/1

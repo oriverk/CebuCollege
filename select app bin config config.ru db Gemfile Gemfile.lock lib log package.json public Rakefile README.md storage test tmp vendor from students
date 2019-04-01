@@ -1,0 +1,17 @@
+                List of relations
+ Schema |         Name         |   Type   | Owner 
+--------+----------------------+----------+-------
+ public | ar_internal_metadata | table    | admin
+ public | club_students        | table    | admin
+ public | club_students_id_seq | sequence | admin
+ public | clubs                | table    | admin
+ public | clubs_id_seq         | sequence | admin
+ public | exam_results         | table    | admin
+ public | exam_results_id_seq  | sequence | admin
+ public | schema_migrations    | table    | admin
+ public | students             | table    | admin
+ public | students_id_seq      | sequence | admin
+ public | subjects             | table    | admin
+ public | subjects_id_seq      | sequence | admin
+(12 rows)
+

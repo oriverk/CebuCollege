@@ -6,6 +6,7 @@
 <table class= "table table-hover table-dark">
   <thead class="thead-light">
     <tr>
+      <th>pass</th>
       <th>氏名</th>
       <th>メールアドレス</th>
       <th>性別</th>
@@ -16,9 +17,10 @@
   </thead>
 
   <tbody>
-    <% if current_student.admin? %>
+    <!-- <% if current_student.admin? %> -->
       <% @students.each do |student| %>
         <tr>
+          <td><%= student.password %></td>
           <td><%= student.name %></td>
           <td><%= student.email %></td>
           <td><%= display_name student.gender %></td>
@@ -27,10 +29,10 @@
           <td><%= link_to '表示', student, class:"btn btn-outline-primary" %></td>
           <td><%= link_to '編集', edit_student_path(student) , class:"btn btn-outline-info" %></td>
           <td><%= link_to '削除', student, method: :delete, data: { confirm: 'よろしいですか？' } , class:"btn btn-outline-danger" %></td>
-          <td><%= link_to '試験結果追加', new_exam_result_path(student_id: student.id), class:"btn btn-warning-info" %></td>
-          <td><%= link_to '所属部活追加', new_club_student_path(student_id: student.id), class:"btn btn-warning-info" %></td>
+          <td><%= link_to '試験結果追加', new_exam_result_path(student_id: student.id), class:"btn btn-outline-warning" %></td>
+          <td><%= link_to '所属部活追加', new_club_student_path(student_id: student.id), class:"btn btn-outline-warning" %></td>
         </tr>
-      <% end %>
+      <!--<% end %>
     <% else %>
       <tr>
         <td><%= @student.name %></td>
@@ -41,10 +43,10 @@
         <td><%= link_to '表示', @student, class:"btn btn-outline-primary" %></td>
         <td><%= link_to '編集', edit_student_path(@student) , class:"btn btn-outline-info"  %></td>
         <td><%= link_to '削除', @student, method: :delete, data: { confirm: 'よろしいですか？' } , class:"btn btn-outline-danger" %></td>
-        <td><%= link_to '試験結果追加', new_exam_result_path(student_id: @student.id), class:"btn btn-warning-info" %></td>
-        <td><%= link_to '所属部活追加', new_club_student_path(student_id: @student.id), class:"btn btn-warning-info" %></td>
+        <td><%= link_to '試験結果追加', new_exam_result_path(student_id: @student.id), class:"btn btn-outline-warning" %></td>
+        <td><%= link_to '所属部活追加', new_club_student_path(student_id: @student.id), class:"btn btn-outline-warning" %></td>
       </tr>
-    <% end %>
+    <% end %>-->
   </tbody>
 </table>
 

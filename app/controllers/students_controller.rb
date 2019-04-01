@@ -21,6 +21,7 @@ class StudentsController < ApplicationController
                        .select('exam_results.name as exam_result_name, subjects.name as subject_name, exam_results.score')
                        .select('CAST((exam_results.score / subjects.max_score) * 100 as int) as ratio')
                        .where(id: params[:id])
+                       .order(id: :asc)
 
     avg_result = Student.joins(:subjects)
                         .select('subjects.id as subject_id')
