@@ -1,0 +1,2 @@
+- 2019,11,3  used heroku app
+on 2019,11,3 destroy heroku app on web
